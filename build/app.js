@@ -1,10 +1,7 @@
-"use strict";
-
-var _express = _interopRequireDefault(require("express"));
-var _bodyParser = _interopRequireDefault(require("body-parser"));
-var _cors = _interopRequireDefault(require("cors"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const app = (0, _express.default)();
-app.use(_bodyParser.default.json());
-app.use((0, _cors.default)());
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 app.listen(process.env.PORT || 3000);
