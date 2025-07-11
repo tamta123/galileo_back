@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                        // Modern JS features
+    "module": "ESNext",                        // For using `import`/`export`
+    "moduleResolution": "Node",                // Required for resolving modules like express
+    "rootDir": "./src",                        // Where your TS source files live
+    "outDir": "./build",
+    "esModuleInterop": true,                   // Helps import commonjs modules like express
+    "forceConsistentCasingInFileNames": true,  // Avoid issues with file name casing
+    "strict": true,                            // Enables all strict type checks
+    "skipLibCheck": true                       // Skips checking `node_modules` types for faster build
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
