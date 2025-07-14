@@ -1,30 +1,21 @@
 import express from "express"
 import bodyParser from "body-parser"
-import dotenv from "dotenv"
 import cors from "cors"
-import sequelize from "./config/sql.js"
 
 
-dotenv.config()
-const app = express()
-app.use(bodyParser.json())
-app.use(cors())
-const PORT = process.env.PORT || 4000;
+const app = express();
 
-
-(async () => {
+async function init() {
   try {
-    await sequelize.authenticate();
-    console.log("✅ Database connected successfully.");
+    serverStart();
   } catch (error) {
-    console.error("❌ Unable to connect to the database:", error);
+    console.log(error);
   }
-})();
+}
+function serverStart() {
+  app.use(bodyParser.json());
+  app.use(cors());
+  app.listen(process.env.PORT || 3000);
+}
 
-app.get("/", (req, res) => {
-  res.send("Hello from Galileo backend 🚀");
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-})
+init();
