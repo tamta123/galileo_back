@@ -4,6 +4,6 @@ declare namespace NodeJS {
     PGUSER: string;
     PGPASSWORD: string;
     PGHOST: string;
-    PGPORT: string;
+    PGPORT: number;
   }
 }
