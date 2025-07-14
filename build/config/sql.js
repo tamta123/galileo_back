@@ -1,13 +1,13 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 dotenv.config();
-const sequelize = new Sequelize(process.env.PGDATABASE, // Add !
-process.env.PGUSER, // Add !
-process.env.PGPASSWORD, // Add !
+const sequelize = new Sequelize("railway", // database name
+"postgres", // username
+"cNerLgzndajXTngFrclAKtxfttshIOgc", // password
 {
-    host: process.env.PGHOST,
+    host: "containers-us-west-999.railway.app", // ← use public host, NOT postgres.railway.internal
     dialect: "postgres",
-    port: Number(process.env.PGPORT), // also make sure to cast to number
+    port: 5432,
 });
 try {
     await sequelize.authenticate();
