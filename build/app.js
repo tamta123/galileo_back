@@ -1,1 +1,18 @@
-import express from"express";import bodyParser from"body-parser";import cors from"cors";const app=express();async function init(){try{serverStart()}catch(error){console.log(error)}}function serverStart(){app.use(bodyParser.json());app.use(cors());app.listen(process.env.PORT||3000)}init();
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
+const app = express();
+async function init() {
+    try {
+        serverStart();
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+function serverStart() {
+    app.use(bodyParser.json());
+    app.use(cors());
+    app.listen(process.env.PORT || 3000);
+}
+init();
