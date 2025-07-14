@@ -5,7 +5,7 @@ const sequelize = new Sequelize("railway", // database name
 "postgres", // username
 "cNerLgzndajXTngFrclAKtxfttshIOgc", // password
 {
-    host: "containers-us-west-999.railway.app", // ← use public host, NOT postgres.railway.internal
+    host: "postgres.railway.internal",
     dialect: "postgres",
     port: 5432,
 });
