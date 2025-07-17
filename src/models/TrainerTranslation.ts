@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/sql.js";
-import Trainer from "./trainer.js";
+import Trainer from "./Trainer.js";
 
 const TrainerTranslation = sequelize.define("TrainerTranslation",{
     language:{
