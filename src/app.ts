@@ -2,15 +2,17 @@ import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
 import "./config/sql.js";  
+import syncModels from "./models/index.js";
 
 
 const app = express();
 
 async function init() {
   try {
+    await syncModels();
     serverStart();
   } catch (error) {
-    console.log(error);
+    console.log("❌ Failed to initialize:", error);
   }
 }
 function serverStart() {
