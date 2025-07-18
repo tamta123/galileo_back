@@ -10,15 +10,17 @@ const Trainer = sequelize.define("Trainer", {
 
 
 export async function seedTrainers() {
+const BASE_URL = "https://galileoback-production.up.railway.app";
+
   const trainersData = [
-    { branchId: 2, photo: "/images/vaxo_trainer.JPG" },
-    { branchId: 2, photo: "/images/giorgi_trainer.JPG" },
-    { branchId: 2, photo: "/images/vlad_trainer.jpeg" },
-    { branchId: 2, photo: "/images/kristine_trainer.JPG" },
-    { branchId: 2, photo: "/images/nika_trainer.JPG" },
-    { branchId: 1, photo: "/images/salome.JPG" },
-    { branchId: 1, photo: "/images/teo.JPG" },
-    { branchId: 1, photo: "/images/zura.JPG" }  ];
+    { branchId: 2, photo: `${BASE_URL}/images/vaxo_trainer.JPG` },
+    { branchId: 2, photo: `${BASE_URL}/images/giorgi_trainer.JPG`},
+    { branchId: 2, photo: `${BASE_URL}/images/vlad_trainer.jpeg`},
+    { branchId: 2, photo: `${BASE_URL}/images/kristine_trainer.JPG`},
+    { branchId: 2, photo: `${BASE_URL}/images/nika_trainer.JPG`},
+    { branchId: 1, photo: `${BASE_URL}/images/salome.JPG`},
+    { branchId: 1, photo: `${BASE_URL}/images/teo.JPG`},
+    { branchId: 1, photo: `${BASE_URL}/images/zura.JPG`}  ];
 
   try {
     await Trainer.bulkCreate(trainersData);

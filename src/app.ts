@@ -15,7 +15,7 @@ async function init() {
   try {
     await syncModels();
     // await initBranches(); // seed branches once
-    await seedTrainers()
+    // await seedTrainers()
     serverStart();
   } catch (error) {
     console.log("❌ Failed to initialize:", error);
