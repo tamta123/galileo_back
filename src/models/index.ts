@@ -1,8 +1,30 @@
 import sequelize from "../config/sql.js";
+import Branch from "./Branch.js";
 import Trainer from "./Trainer.js";
 import TrainerTranslation from "./TrainerTranslation.js";
 
-// (Later you’ll import other models like GroupClass, etc.)
+// Set associations
+Trainer.hasMany(TrainerTranslation, {
+  foreignKey: "trainerId",
+  as: "translations",
+  onDelete: "CASCADE",
+});
+
+TrainerTranslation.belongsTo(Trainer, {
+  foreignKey: "trainerId",
+  as: "trainer",
+});
+
+
+Trainer.belongsTo(Branch, {
+  foreignKey: "branchId",
+  as: "branch",
+  onDelete: "CASCADE",
+});
+Branch.hasMany(Trainer, {
+  foreignKey: "branchId",
+  as: "trainers",
+});
 
 const syncModels = async () => {
   try {

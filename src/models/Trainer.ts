@@ -5,7 +5,27 @@ const Trainer = sequelize.define("Trainer", {
   photo: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
+  }
 });
+
+
+export async function seedTrainers() {
+  const trainersData = [
+    { branchId: 2, photo: "/images/vaxo_trainer.JPG" },
+    { branchId: 2, photo: "/images/giorgi_trainer.JPG" },
+    { branchId: 2, photo: "/images/vlad_trainer.jpeg" },
+    { branchId: 2, photo: "/images/kristine_trainer.JPG" },
+    { branchId: 2, photo: "/images/nika_trainer.JPG" },
+    { branchId: 1, photo: "/images/salome.JPG" },
+    { branchId: 1, photo: "/images/teo.JPG" },
+    { branchId: 1, photo: "/images/zura.JPG" }  ];
+
+  try {
+    await Trainer.bulkCreate(trainersData);
+    console.log("✅ Trainers seeded successfully");
+  } catch (error) {
+    console.error("❌ Error seeding trainers:", error);
+  }
+}
 
 export default Trainer;

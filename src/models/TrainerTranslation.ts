@@ -17,16 +17,6 @@ const TrainerTranslation = sequelize.define("TrainerTranslation",{
     },
 })
 
-// Set associations
-Trainer.hasMany(TrainerTranslation, {
-  foreignKey: "trainerId",
-  as: "translations",
-  onDelete: "CASCADE",
-});
 
-TrainerTranslation.belongsTo(Trainer, {
-  foreignKey: "trainerId",
-  as: "trainer",
-});
 
 export default TrainerTranslation;
