@@ -6,6 +6,7 @@ import syncModels from "./models/index.js";
 import sequelize from "./config/sql.js";
 import { initBranches } from "./models/Branch.js";
 import { seedTrainers } from "./models/Trainer.js";
+import { seedTrainerTranslations } from "./models/TrainerTranslation.js";
 
 
 const app = express();
@@ -16,6 +17,7 @@ async function init() {
     await syncModels();
     // await initBranches(); // seed branches once
     // await seedTrainers()
+  //  await seedTrainerTranslations()
     serverStart();
   } catch (error) {
     console.log("❌ Failed to initialize:", error);

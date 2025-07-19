@@ -20,7 +20,7 @@ const BASE_URL = "https://galileoback-production.up.railway.app";
     { branchId: 2, photo: `${BASE_URL}/images/nika_trainer.JPG`},
     { branchId: 1, photo: `${BASE_URL}/images/salome.JPG`},
     { branchId: 1, photo: `${BASE_URL}/images/teo.JPG`},
-    { branchId: 1, photo: `${BASE_URL}/images/zura.JPG`}  ];
+    { branchId: 1, photo: `${BASE_URL}/images/zura.JPG`}];
 
   try {
     await Trainer.bulkCreate(trainersData);
